@@ -16,7 +16,6 @@
 		9E6E08C816FF3F56006F0E25 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08C716FF3F56006F0E25 /* Default.png */; };
 		9E6E08CA16FF3F56006F0E25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08C916FF3F56006F0E25 /* Default@2x.png */; };
 		9E6E08CC16FF3F56006F0E25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08CB16FF3F56006F0E25 /* Default-568h@2x.png */; };
-		9E6E08D216FF3F56006F0E25 /* smkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E08D116FF3F56006F0E25 /* smkViewController.m */; };
 		9E6E08E516FF4A7C006F0E25 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08DF16FF4A7C006F0E25 /* gear.png */; };
 		9E6E08E616FF4A7C006F0E25 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08E016FF4A7C006F0E25 /* gear@2x.png */; };
 		9E6E08E716FF4A7C006F0E25 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08E116FF4A7C006F0E25 /* globe.png */; };
@@ -28,6 +27,8 @@
 		9E6E08EF16FF57F2006F0E25 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08CD16FF3F56006F0E25 /* MainStoryboard.storyboard */; };
 		9E6E08F216FF5B0B006F0E25 /* smkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E08F116FF5B0B006F0E25 /* smkWebViewController.m */; };
 		9E6E08F516FF5CB8006F0E25 /* smkWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E08F416FF5CB8006F0E25 /* smkWebView.m */; };
+		9E6E08FD16FF72EE006F0E25 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08FC16FF72EE006F0E25 /* app_icon@2x.png */; };
+		9E6E08FF16FF734F006F0E25 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08FE16FF734F006F0E25 /* app_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +46,6 @@
 		9E6E08C916FF3F56006F0E25 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9E6E08CB16FF3F56006F0E25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9E6E08CE16FF3F56006F0E25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9E6E08D016FF3F56006F0E25 /* smkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = smkViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		9E6E08D116FF3F56006F0E25 /* smkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = smkViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9E6E08DF16FF4A7C006F0E25 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear.png; path = Resources/gear.png; sourceTree = "<group>"; };
 		9E6E08E016FF4A7C006F0E25 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gear@2x.png"; path = "Resources/gear@2x.png"; sourceTree = "<group>"; };
 		9E6E08E116FF4A7C006F0E25 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = globe.png; path = Resources/globe.png; sourceTree = "<group>"; };
@@ -59,6 +58,9 @@
 		9E6E08F116FF5B0B006F0E25 /* smkWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smkWebViewController.m; sourceTree = "<group>"; };
 		9E6E08F316FF5CB8006F0E25 /* smkWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smkWebView.h; sourceTree = "<group>"; };
 		9E6E08F416FF5CB8006F0E25 /* smkWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smkWebView.m; sourceTree = "<group>"; };
+		9E6E08FB16FF667A006F0E25 /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
+		9E6E08FC16FF72EE006F0E25 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../app_icon@2x.png"; sourceTree = "<group>"; };
+		9E6E08FE16FF734F006F0E25 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../app_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,14 +109,10 @@
 			children = (
 				9E6E08C416FF3F56006F0E25 /* smkAppDelegate.h */,
 				9E6E08C516FF3F56006F0E25 /* smkAppDelegate.m */,
-				9E6E08CD16FF3F56006F0E25 /* MainStoryboard.storyboard */,
-				9E6E08D016FF3F56006F0E25 /* smkViewController.h */,
-				9E6E08D116FF3F56006F0E25 /* smkViewController.m */,
-				9E6E08F016FF5B0B006F0E25 /* smkWebViewController.h */,
-				9E6E08F116FF5B0B006F0E25 /* smkWebViewController.m */,
-				9E6E08F316FF5CB8006F0E25 /* smkWebView.h */,
-				9E6E08F416FF5CB8006F0E25 /* smkWebView.m */,
+				9E6E08F916FF655A006F0E25 /* UI Components */,
+				9E6E08F816FF6533006F0E25 /* View Controllers */,
 				9E6E08BC16FF3F56006F0E25 /* Supporting Files */,
+				9E6E08D816FF4A0A006F0E25 /* Resources */,
 			);
 			path = NoAdsWebView;
 			sourceTree = "<group>";
@@ -122,19 +120,37 @@
 		9E6E08BC16FF3F56006F0E25 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9E6E08D816FF4A0A006F0E25 /* Resources */,
+				9E6E08FA16FF6653006F0E25 /* Logging */,
+				9E6E08CD16FF3F56006F0E25 /* MainStoryboard.storyboard */,
 				9E6E08BD16FF3F56006F0E25 /* NoAdsWebView-Info.plist */,
 				9E6E08BE16FF3F56006F0E25 /* InfoPlist.strings */,
 				9E6E08C116FF3F56006F0E25 /* main.m */,
 				9E6E08C316FF3F56006F0E25 /* NoAdsWebView-Prefix.pch */,
-				9E6E08C716FF3F56006F0E25 /* Default.png */,
-				9E6E08C916FF3F56006F0E25 /* Default@2x.png */,
-				9E6E08CB16FF3F56006F0E25 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		9E6E08D816FF4A0A006F0E25 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E6E090016FF7359006F0E25 /* App Icons */,
+				9E6E08F716FF6461006F0E25 /* Icons */,
+				9E6E08F616FF6457006F0E25 /* Launch Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9E6E08F616FF6457006F0E25 /* Launch Images */ = {
+			isa = PBXGroup;
+			children = (
+				9E6E08C716FF3F56006F0E25 /* Default.png */,
+				9E6E08C916FF3F56006F0E25 /* Default@2x.png */,
+				9E6E08CB16FF3F56006F0E25 /* Default-568h@2x.png */,
+			);
+			name = "Launch Images";
+			sourceTree = "<group>";
+		};
+		9E6E08F716FF6461006F0E25 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
 				9E6E08EB16FF576D006F0E25 /* reload.png */,
@@ -146,7 +162,42 @@
 				9E6E08E316FF4A7C006F0E25 /* home.png */,
 				9E6E08E416FF4A7C006F0E25 /* home@2x.png */,
 			);
-			name = Resources;
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		9E6E08F816FF6533006F0E25 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E6E08F016FF5B0B006F0E25 /* smkWebViewController.h */,
+				9E6E08F116FF5B0B006F0E25 /* smkWebViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9E6E08F916FF655A006F0E25 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E6E08F316FF5CB8006F0E25 /* smkWebView.h */,
+				9E6E08F416FF5CB8006F0E25 /* smkWebView.m */,
+			);
+			name = "UI Components";
+			sourceTree = "<group>";
+		};
+		9E6E08FA16FF6653006F0E25 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				9E6E08FB16FF667A006F0E25 /* Logging.h */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+		9E6E090016FF7359006F0E25 /* App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				9E6E08FE16FF734F006F0E25 /* app_icon.png */,
+				9E6E08FC16FF72EE006F0E25 /* app_icon@2x.png */,
+			);
+			name = "App Icons";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +265,8 @@
 				9E6E08ED16FF576D006F0E25 /* reload.png in Resources */,
 				9E6E08EE16FF576D006F0E25 /* reload@2x.png in Resources */,
 				9E6E08EF16FF57F2006F0E25 /* MainStoryboard.storyboard in Resources */,
+				9E6E08FD16FF72EE006F0E25 /* app_icon@2x.png in Resources */,
+				9E6E08FF16FF734F006F0E25 /* app_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +279,6 @@
 			files = (
 				9E6E08C216FF3F56006F0E25 /* main.m in Sources */,
 				9E6E08C616FF3F56006F0E25 /* smkAppDelegate.m in Sources */,
-				9E6E08D216FF3F56006F0E25 /* smkViewController.m in Sources */,
 				9E6E08F216FF5B0B006F0E25 /* smkWebViewController.m in Sources */,
 				9E6E08F516FF5CB8006F0E25 /* smkWebView.m in Sources */,
 			);
