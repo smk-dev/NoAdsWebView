@@ -16,7 +16,6 @@
 		9E6E08C816FF3F56006F0E25 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08C716FF3F56006F0E25 /* Default.png */; };
 		9E6E08CA16FF3F56006F0E25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08C916FF3F56006F0E25 /* Default@2x.png */; };
 		9E6E08CC16FF3F56006F0E25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08CB16FF3F56006F0E25 /* Default-568h@2x.png */; };
-		9E6E08CF16FF3F56006F0E25 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08CD16FF3F56006F0E25 /* MainStoryboard.storyboard */; };
 		9E6E08D216FF3F56006F0E25 /* smkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E08D116FF3F56006F0E25 /* smkViewController.m */; };
 		9E6E08E516FF4A7C006F0E25 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08DF16FF4A7C006F0E25 /* gear.png */; };
 		9E6E08E616FF4A7C006F0E25 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08E016FF4A7C006F0E25 /* gear@2x.png */; };
@@ -24,6 +23,11 @@
 		9E6E08E816FF4A7C006F0E25 /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08E216FF4A7C006F0E25 /* globe@2x.png */; };
 		9E6E08E916FF4A7C006F0E25 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08E316FF4A7C006F0E25 /* home.png */; };
 		9E6E08EA16FF4A7C006F0E25 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08E416FF4A7C006F0E25 /* home@2x.png */; };
+		9E6E08ED16FF576D006F0E25 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08EB16FF576D006F0E25 /* reload.png */; };
+		9E6E08EE16FF576D006F0E25 /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08EC16FF576D006F0E25 /* reload@2x.png */; };
+		9E6E08EF16FF57F2006F0E25 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6E08CD16FF3F56006F0E25 /* MainStoryboard.storyboard */; };
+		9E6E08F216FF5B0B006F0E25 /* smkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E08F116FF5B0B006F0E25 /* smkWebViewController.m */; };
+		9E6E08F516FF5CB8006F0E25 /* smkWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6E08F416FF5CB8006F0E25 /* smkWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,12 @@
 		9E6E08E216FF4A7C006F0E25 /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "globe@2x.png"; path = "Resources/globe@2x.png"; sourceTree = "<group>"; };
 		9E6E08E316FF4A7C006F0E25 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Resources/home.png; sourceTree = "<group>"; };
 		9E6E08E416FF4A7C006F0E25 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home@2x.png"; path = "Resources/home@2x.png"; sourceTree = "<group>"; };
+		9E6E08EB16FF576D006F0E25 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload.png; path = Resources/reload.png; sourceTree = "<group>"; };
+		9E6E08EC16FF576D006F0E25 /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reload@2x.png"; path = "Resources/reload@2x.png"; sourceTree = "<group>"; };
+		9E6E08F016FF5B0B006F0E25 /* smkWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smkWebViewController.h; sourceTree = "<group>"; };
+		9E6E08F116FF5B0B006F0E25 /* smkWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smkWebViewController.m; sourceTree = "<group>"; };
+		9E6E08F316FF5CB8006F0E25 /* smkWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smkWebView.h; sourceTree = "<group>"; };
+		9E6E08F416FF5CB8006F0E25 /* smkWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smkWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,10 @@
 				9E6E08CD16FF3F56006F0E25 /* MainStoryboard.storyboard */,
 				9E6E08D016FF3F56006F0E25 /* smkViewController.h */,
 				9E6E08D116FF3F56006F0E25 /* smkViewController.m */,
+				9E6E08F016FF5B0B006F0E25 /* smkWebViewController.h */,
+				9E6E08F116FF5B0B006F0E25 /* smkWebViewController.m */,
+				9E6E08F316FF5CB8006F0E25 /* smkWebView.h */,
+				9E6E08F416FF5CB8006F0E25 /* smkWebView.m */,
 				9E6E08BC16FF3F56006F0E25 /* Supporting Files */,
 			);
 			path = NoAdsWebView;
@@ -123,6 +137,8 @@
 		9E6E08D816FF4A0A006F0E25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E6E08EB16FF576D006F0E25 /* reload.png */,
+				9E6E08EC16FF576D006F0E25 /* reload@2x.png */,
 				9E6E08DF16FF4A7C006F0E25 /* gear.png */,
 				9E6E08E016FF4A7C006F0E25 /* gear@2x.png */,
 				9E6E08E116FF4A7C006F0E25 /* globe.png */,
@@ -189,13 +205,15 @@
 				9E6E08C816FF3F56006F0E25 /* Default.png in Resources */,
 				9E6E08CA16FF3F56006F0E25 /* Default@2x.png in Resources */,
 				9E6E08CC16FF3F56006F0E25 /* Default-568h@2x.png in Resources */,
-				9E6E08CF16FF3F56006F0E25 /* MainStoryboard.storyboard in Resources */,
 				9E6E08E516FF4A7C006F0E25 /* gear.png in Resources */,
 				9E6E08E616FF4A7C006F0E25 /* gear@2x.png in Resources */,
 				9E6E08E716FF4A7C006F0E25 /* globe.png in Resources */,
 				9E6E08E816FF4A7C006F0E25 /* globe@2x.png in Resources */,
 				9E6E08E916FF4A7C006F0E25 /* home.png in Resources */,
 				9E6E08EA16FF4A7C006F0E25 /* home@2x.png in Resources */,
+				9E6E08ED16FF576D006F0E25 /* reload.png in Resources */,
+				9E6E08EE16FF576D006F0E25 /* reload@2x.png in Resources */,
+				9E6E08EF16FF57F2006F0E25 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +227,8 @@
 				9E6E08C216FF3F56006F0E25 /* main.m in Sources */,
 				9E6E08C616FF3F56006F0E25 /* smkAppDelegate.m in Sources */,
 				9E6E08D216FF3F56006F0E25 /* smkViewController.m in Sources */,
+				9E6E08F216FF5B0B006F0E25 /* smkWebViewController.m in Sources */,
+				9E6E08F516FF5CB8006F0E25 /* smkWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
