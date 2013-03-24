@@ -11,4 +11,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    
+    // logger configuration
+    #define LOGGING_ENABLED 1
+    #import "Logging.h"
 #endif

@@ -62,7 +62,7 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"ups %@", error);
+    LogError(@"WebView error: %@", error);
 }
 
 #pragma mark - Actions
