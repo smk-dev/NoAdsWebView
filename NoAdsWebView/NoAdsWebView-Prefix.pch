@@ -15,4 +15,7 @@
     // logger configuration
     #define LOGGING_ENABLED 1
     #import "Logging.h"
+
+    // custom macros
+    #import "Macros.h"
 #endif

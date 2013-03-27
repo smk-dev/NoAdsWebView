@@ -37,7 +37,7 @@
                             </button>
                             <webView contentMode="scaleToFill" id="JTU-om-sJp" customClass="smkWebView">
                                 <rect key="frame" x="0.0" y="64" width="326" height="435"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,7 +86,7 @@
         <scene sceneID="TKw-vh-fnB">
             <objects>
                 <tabBarController wantsFullScreenLayout="YES" definesPresentationContext="YES" id="mbn-74-7Yp" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="dhh-9b-gBM">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

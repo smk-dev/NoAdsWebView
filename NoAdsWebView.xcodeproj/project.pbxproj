@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E02355B17022D57001B9C55 /* smkUrlFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E02355A17022D57001B9C55 /* smkUrlFilter.m */; };
+		9E02355E17023F55001B9C55 /* smkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E02355D17023F55001B9C55 /* smkCache.m */; };
 		9E6E08B616FF3F56006F0E25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E08B516FF3F56006F0E25 /* UIKit.framework */; };
 		9E6E08B816FF3F56006F0E25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E08B716FF3F56006F0E25 /* Foundation.framework */; };
 		9E6E08BA16FF3F56006F0E25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E08B916FF3F56006F0E25 /* CoreGraphics.framework */; };
@@ -32,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E02355917022D57001B9C55 /* smkUrlFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smkUrlFilter.h; sourceTree = "<group>"; };
+		9E02355A17022D57001B9C55 /* smkUrlFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smkUrlFilter.m; sourceTree = "<group>"; };
+		9E02355C17023F55001B9C55 /* smkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smkCache.h; sourceTree = "<group>"; };
+		9E02355D17023F55001B9C55 /* smkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smkCache.m; sourceTree = "<group>"; };
 		9E6E08B216FF3F56006F0E25 /* NoAdsWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoAdsWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6E08B516FF3F56006F0E25 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E6E08B716FF3F56006F0E25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,7 +115,7 @@
 			children = (
 				9E6E08C416FF3F56006F0E25 /* smkAppDelegate.h */,
 				9E6E08C516FF3F56006F0E25 /* smkAppDelegate.m */,
-				9E6E08F916FF655A006F0E25 /* UI Components */,
+				9E6E08F916FF655A006F0E25 /* Classes */,
 				9E6E08F816FF6533006F0E25 /* View Controllers */,
 				9E6E08BC16FF3F56006F0E25 /* Supporting Files */,
 				9E6E08D816FF4A0A006F0E25 /* Resources */,
@@ -120,12 +126,12 @@
 		9E6E08BC16FF3F56006F0E25 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9E6E08FA16FF6653006F0E25 /* Logging */,
 				9E6E08CD16FF3F56006F0E25 /* MainStoryboard.storyboard */,
 				9E6E08BD16FF3F56006F0E25 /* NoAdsWebView-Info.plist */,
 				9E6E08BE16FF3F56006F0E25 /* InfoPlist.strings */,
 				9E6E08C116FF3F56006F0E25 /* main.m */,
 				9E6E08C316FF3F56006F0E25 /* NoAdsWebView-Prefix.pch */,
+				9E6E08FB16FF667A006F0E25 /* Logging.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -174,21 +180,17 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		9E6E08F916FF655A006F0E25 /* UI Components */ = {
+		9E6E08F916FF655A006F0E25 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				9E6E08F316FF5CB8006F0E25 /* smkWebView.h */,
 				9E6E08F416FF5CB8006F0E25 /* smkWebView.m */,
+				9E02355917022D57001B9C55 /* smkUrlFilter.h */,
+				9E02355A17022D57001B9C55 /* smkUrlFilter.m */,
+				9E02355C17023F55001B9C55 /* smkCache.h */,
+				9E02355D17023F55001B9C55 /* smkCache.m */,
 			);
-			name = "UI Components";
-			sourceTree = "<group>";
-		};
-		9E6E08FA16FF6653006F0E25 /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				9E6E08FB16FF667A006F0E25 /* Logging.h */,
-			);
-			name = Logging;
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		9E6E090016FF7359006F0E25 /* App Icons */ = {
@@ -281,6 +283,8 @@
 				9E6E08C616FF3F56006F0E25 /* smkAppDelegate.m in Sources */,
 				9E6E08F216FF5B0B006F0E25 /* smkWebViewController.m in Sources */,
 				9E6E08F516FF5CB8006F0E25 /* smkWebView.m in Sources */,
+				9E02355B17022D57001B9C55 /* smkUrlFilter.m in Sources */,
+				9E02355E17023F55001B9C55 /* smkCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +407,7 @@
 				9E6E08D716FF3F56006F0E25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

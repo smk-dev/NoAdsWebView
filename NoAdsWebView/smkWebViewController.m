@@ -15,7 +15,6 @@
 - (void)viewDidLoad {
     // assign delegate
     self.urlTextField.delegate = self;
-    self.webView.delegate = self;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -31,38 +30,12 @@
     // check if user typed something
     if (urlString.length > 0) {
         
-        // make URL from string
-        NSURL *url = [NSURL URLWithString:urlString];
-        
-        // make request from URL
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        
         // load request
-        [self.webView loadRequest:request];
+        [self.webView loadRequest:urlString];
     }
     
     // hide keyboard
     return YES;
-}
-
-#pragma mark - UIWebViewDelegate
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    
-    return YES;
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    NSLog(@"start");
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    
-    NSLog(@"done");
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    LogError(@"WebView error: %@", error);
 }
 
 #pragma mark - Actions
