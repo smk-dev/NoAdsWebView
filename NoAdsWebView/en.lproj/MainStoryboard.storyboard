@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Smk Web View Controller - WebView-->
+        <!--Smk Web View Controller - Browser-->
         <scene sceneID="CZc-O1-MWz">
             <objects>
                 <viewController id="kp1-c8-Tc3" customClass="smkWebViewController" sceneMemberID="viewController">
@@ -12,39 +12,42 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type URL here" minimumFontSize="17" clearButtonMode="whileEditing" id="4xI-1T-jXk">
-                                <rect key="frame" x="20" y="20" width="245" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
-                                <connections>
-                                    <outlet property="delegate" destination="kp1-c8-Tc3" id="sqi-Pa-kdX"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jNZ-wD-HSN">
-                                <rect key="frame" x="270" y="20" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" image="reload.png">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="reloadButtonAction:" destination="kp1-c8-Tc3" eventType="touchUpInside" id="JN7-y0-3he"/>
-                                </connections>
-                            </button>
                             <webView contentMode="scaleToFill" id="JTU-om-sJp" customClass="smkWebView">
-                                <rect key="frame" x="0.0" y="64" width="326" height="435"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <rect key="frame" x="65" y="146" width="190" height="232"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.97056829720000004" blue="0.2111395287" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="Aq2-i6-jRV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" id="EGw-20-Fb3">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type URL or query here" minimumFontSize="17" clearButtonMode="whileEditing" id="54t-bB-Kb5">
+                                            <rect key="frame" x="12" y="7" width="140" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="kp1-c8-Tc3" id="NAF-FW-U30"/>
+                                            </connections>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="05l-Z7-N88"/>
+                                    <barButtonItem image="arrow_left.png" id="Ijb-Ap-TCh"/>
+                                    <barButtonItem image="arrow_right.png" id="FRg-Ft-mEn"/>
+                                    <barButtonItem image="reload.png" id="5E8-eU-BxY"/>
+                                </items>
+                            </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="WebView" image="globe.png" id="8RN-ww-z8k"/>
+                    <tabBarItem key="tabBarItem" title="Browser" image="globe.png" id="8RN-ww-z8k"/>
+                    <toolbarItems/>
                     <connections>
-                        <outlet property="urlTextField" destination="4xI-1T-jXk" id="MAa-u5-A7h"/>
+                        <outlet property="nextButton" destination="FRg-Ft-mEn" id="Wmc-If-ZAJ"/>
+                        <outlet property="previousButton" destination="Ijb-Ap-TCh" id="vDl-PD-XxK"/>
+                        <outlet property="reloadButton" destination="5E8-eU-BxY" id="Txl-Hw-Emf"/>
+                        <outlet property="toolbarFirst" destination="Aq2-i6-jRV" id="z40-bn-4Rq"/>
+                        <outlet property="urlTextField" destination="54t-bB-Kb5" id="uSt-WC-Xkh"/>
                         <outlet property="webView" destination="JTU-om-sJp" id="AQ0-NS-xnx"/>
                     </connections>
                 </viewController>
@@ -52,31 +55,135 @@
             </objects>
             <point key="canvasLocation" x="1050" y="507"/>
         </scene>
-        <!--View Controller - Settings-->
+        <!--Smk Settings View Controller - Settings-->
         <scene sceneID="zYh-xm-CNr">
             <objects>
-                <viewController id="ItE-Rt-v2r" sceneMemberID="viewController">
+                <viewController id="ItE-Rt-v2r" customClass="smkSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PLU-vS-K4s">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="HL0-Gn-75e">
+                                <rect key="frame" x="0.0" y="44" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CELL_ID" id="ILl-Ts-A8K" customClass="smkSettingsCell">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="0xb-c1-iam">
+                                                    <rect key="frame" x="213" y="8" width="79" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="switchDidChanged:" destination="ILl-Ts-A8K" eventType="valueChanged" id="vLw-7U-KvS"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uT4-Oh-hH8">
+                                                    <rect key="frame" x="13" y="11" width="192" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="switchButton" destination="0xb-c1-iam" id="lsf-OH-Ggu"/>
+                                            <outlet property="titleLabel" destination="uT4-Oh-hH8" id="dqm-Kg-X1u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ItE-Rt-v2r" id="6cW-zk-5BV"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bYp-ir-l0c">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <items>
+                                    <barButtonItem title="Turn all ON" id="8V0-GX-M17">
+                                        <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="turnAllOnAction:" destination="ItE-Rt-v2r" id="2hP-lx-xtK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tEd-bV-LBw"/>
+                                    <barButtonItem title="Turn all OFF" id="Tf5-fz-b8I">
+                                        <color key="tintColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="turnAllOffAction:" destination="ItE-Rt-v2r" id="ycR-8a-7Pi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear.png" id="wbq-ex-DKk"/>
+                    <connections>
+                        <outlet property="tableView" destination="HL0-Gn-75e" id="wiL-5Z-HH3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXx-7L-Y9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050" y="1183"/>
         </scene>
-        <!--View Controller - Intro-->
+        <!--Smk Intro View Controller - Intro-->
         <scene sceneID="HlT-az-U0g">
             <objects>
-                <viewController id="YmV-xx-ZQA" sceneMemberID="viewController">
+                <viewController id="YmV-xx-ZQA" customClass="smkIntroViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oo1-Wo-Vud">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Cl4-bs-aPp">
+                                <rect key="frame" x="20" y="68" width="280" height="364"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                                <string key="text">NoAdsWebView is proof of concept project. It allows you to build an iOS web browser based on UIKit's UIWebView with many advantages:
+- faster, because less content is being downloaded,
+- safer, you can filter JavaScript files attached to web page,
+- cheaper, with less content downloaded you use less mobile traffic.
+
+Feel free to take a look in settings tab and turn off few options. Then go to Browser tab and type in URL.</string>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XQK-VD-19x" customClass="smkButton">
+                                <rect key="frame" x="80" y="440" width="160" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Visit my GitHub">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="githubButtonAction:" destination="YmV-xx-ZQA" eventType="touchUpInside" id="5gX-FK-rmV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Introduction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="48v-Fb-Xvr">
+                                <rect key="frame" x="20" y="20" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Intro" image="home.png" id="brm-jH-Gl8"/>
+                    <connections>
+                        <outlet property="githubButton" destination="XQK-VD-19x" id="aX0-Jp-VVR"/>
+                        <outlet property="textView" destination="Cl4-bs-aPp" id="sr1-w1-Nwv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4o-CE-JFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,7 +201,7 @@
                     <connections>
                         <segue destination="YmV-xx-ZQA" kind="relationship" relationship="viewControllers" id="pt2-Dc-DIl"/>
                         <segue destination="kp1-c8-Tc3" kind="relationship" relationship="viewControllers" id="sRv-9L-wf6"/>
-                        <segue destination="ItE-Rt-v2r" kind="relationship" relationship="viewControllers" id="e52-GE-qHT"/>
+                        <segue destination="ItE-Rt-v2r" kind="relationship" relationship="viewControllers" id="jNN-lw-Q1H"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzX-iJ-G32" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,12 +210,42 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_left.png" width="24" height="24"/>
+        <image name="arrow_right.png" width="24" height="24"/>
         <image name="gear.png" width="24" height="24"/>
         <image name="globe.png" width="24" height="24"/>
         <image name="home.png" width="24" height="24"/>
         <image name="reload.png" width="24" height="24"/>
     </resources>
     <classes>
+        <class className="smkButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkButton.h"/>
+        </class>
+        <class className="smkIntroViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkIntroViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="githubButtonAction:"/>
+                <relationship kind="outlet" name="githubButton" candidateClass="smkButton"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="smkSettingsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkSettingsCell.h"/>
+            <relationships>
+                <relationship kind="action" name="switchDidChanged:"/>
+                <relationship kind="outlet" name="switchButton" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="smkSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ssss:"/>
+                <relationship kind="action" name="turnAllOffAction:"/>
+                <relationship kind="action" name="turnAllOnAction:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
         <class className="smkWebView" superclassName="UIWebView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/smkWebView.h"/>
         </class>
@@ -116,6 +253,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/smkWebViewController.h"/>
             <relationships>
                 <relationship kind="action" name="reloadButtonAction:"/>
+                <relationship kind="action" name="toggleToolbarAction:"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="previousButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="reloadButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="showToolbarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbarFirst" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="toolbarSecond" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="urlTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="webView" candidateClass="smkWebView"/>
             </relationships>

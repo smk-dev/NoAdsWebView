@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "smkUrlFilter.h"
 
 @interface smkAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic, readonly) smkUrlFilter *urlFilter;
 
 @end

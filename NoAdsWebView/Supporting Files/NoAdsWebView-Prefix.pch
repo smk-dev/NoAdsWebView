@@ -11,8 +11,10 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    
+    #import <QuartzCore/QuartzCore.h>
+
     // logger configuration
     #define LOGGING_ENABLED 1
+    #define LOGGING_LEVEL_TRACE 1
     #import "Logging.h"
 #endif
