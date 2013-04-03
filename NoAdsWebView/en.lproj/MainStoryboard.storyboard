@@ -13,9 +13,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="JTU-om-sJp" customClass="smkWebView">
-                                <rect key="frame" x="65" y="146" width="190" height="232"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="0.97056829720000004" blue="0.2111395287" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="466"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kp1-c8-Tc3" id="FhV-pn-Lbu"/>
+                                </connections>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="Aq2-i6-jRV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -33,9 +35,21 @@
                                         </textField>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="05l-Z7-N88"/>
-                                    <barButtonItem image="arrow_left.png" id="Ijb-Ap-TCh"/>
-                                    <barButtonItem image="arrow_right.png" id="FRg-Ft-mEn"/>
-                                    <barButtonItem image="reload.png" id="5E8-eU-BxY"/>
+                                    <barButtonItem image="arrow_left.png" id="Ijb-Ap-TCh">
+                                        <connections>
+                                            <action selector="previousButtonAction:" destination="kp1-c8-Tc3" id="jIz-aE-6MA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="arrow_right.png" id="FRg-Ft-mEn">
+                                        <connections>
+                                            <action selector="nextButtonAction:" destination="kp1-c8-Tc3" id="dKh-NG-avS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="reload.png" id="5E8-eU-BxY">
+                                        <connections>
+                                            <action selector="reloadButtonAction:" destination="kp1-c8-Tc3" id="vzp-xD-CIM"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -43,10 +57,10 @@
                     <tabBarItem key="tabBarItem" title="Browser" image="globe.png" id="8RN-ww-z8k"/>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="nextButton" destination="FRg-Ft-mEn" id="Wmc-If-ZAJ"/>
-                        <outlet property="previousButton" destination="Ijb-Ap-TCh" id="vDl-PD-XxK"/>
-                        <outlet property="reloadButton" destination="5E8-eU-BxY" id="Txl-Hw-Emf"/>
-                        <outlet property="toolbarFirst" destination="Aq2-i6-jRV" id="z40-bn-4Rq"/>
+                        <outlet property="nextButton" destination="FRg-Ft-mEn" id="DDS-hL-mc3"/>
+                        <outlet property="previousButton" destination="Ijb-Ap-TCh" id="AfK-Fb-KGD"/>
+                        <outlet property="reloadButton" destination="5E8-eU-BxY" id="bl9-5T-okA"/>
+                        <outlet property="toolbar" destination="Aq2-i6-jRV" id="P2k-Ll-sBq"/>
                         <outlet property="urlTextField" destination="54t-bB-Kb5" id="uSt-WC-Xkh"/>
                         <outlet property="webView" destination="JTU-om-sJp" id="AQ0-NS-xnx"/>
                     </connections>
@@ -217,54 +231,6 @@ Feel free to take a look in settings tab and turn off few options. Then go to Br
         <image name="home.png" width="24" height="24"/>
         <image name="reload.png" width="24" height="24"/>
     </resources>
-    <classes>
-        <class className="smkButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkButton.h"/>
-        </class>
-        <class className="smkIntroViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkIntroViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="githubButtonAction:"/>
-                <relationship kind="outlet" name="githubButton" candidateClass="smkButton"/>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="smkSettingsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkSettingsCell.h"/>
-            <relationships>
-                <relationship kind="action" name="switchDidChanged:"/>
-                <relationship kind="outlet" name="switchButton" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="smkSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ssss:"/>
-                <relationship kind="action" name="turnAllOffAction:"/>
-                <relationship kind="action" name="turnAllOnAction:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="smkWebView" superclassName="UIWebView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkWebView.h"/>
-        </class>
-        <class className="smkWebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/smkWebViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="reloadButtonAction:"/>
-                <relationship kind="action" name="toggleToolbarAction:"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="previousButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="reloadButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="showToolbarButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbarFirst" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="toolbarSecond" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="urlTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="webView" candidateClass="smkWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
