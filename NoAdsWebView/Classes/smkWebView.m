@@ -7,7 +7,6 @@
 //
 
 #import "smkWebView.h"
-#import "smkCache.h"
 
 @interface smkWebView()
 @property (strong, nonatomic) id<UIWebViewDelegate> dummyWebViewDelegate;
@@ -25,36 +24,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.scalesPageToFit = YES;
-        
-        
-        
-        
         super.delegate = self;
-        self.urlFilter = [[smkUrlFilter alloc] init];
-        
-        self.urlFilter.blockFacebookLike = YES;
-        self.urlFilter.blockFacebookLikeBox = YES;
-        self.urlFilter.blockFacebookConnect = YES;
-        self.urlFilter.blockFacebookComment = YES;
-        self.urlFilter.blockFacebookRecomendations = YES;
-        
-        
-        self.urlFilter.blockTwitterFolowButton = YES;
-        self.urlFilter.blockTwitterShareButton = YES;
-        self.urlFilter.blockTwitterTweetButton = YES;
-        
-        
-        self.urlFilter.blockGoogleAnalytics = YES;
-        self.urlFilter.blockGooglePlusOne = YES;
-        self.urlFilter.blockGoogleDoubleClick = YES;
-        
-        
-        int memory = 512 * 1024;
-        int capacity = 10 * 1024 * 1024;
-        NSString *path = @"aa";
-        smkCache *cache = [[smkCache alloc] initWithMemoryCapacity:memory diskCapacity:capacity diskPath:path];
-        
-        [NSURLCache setSharedURLCache:cache];
         
     }
     return self;
@@ -114,7 +84,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     // not fuly loaded
-    if (webView.loading) {
+    if (webView.isLoading) {
         return;
     }
     

@@ -10,14 +10,19 @@
 
 @implementation smkAppDelegate
 
-@synthesize urlFilter;
+@synthesize urlFilter = _urlFilter;
 
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    urlFilter = [[smkUrlFilter alloc] init];
+    // init url filter
+    int memory = 1024 * 1024;
+    int capacity = 10 * 1024 * 1024;
+    NSString *path = @"webview.cache";
+    _urlFilter = [[smkUrlFilter alloc] initWithMemoryCapacity:memory diskCapacity:capacity diskPath:path];
+    [NSURLCache setSharedURLCache:_urlFilter];
+    
     return YES;
 }
 

@@ -13,19 +13,14 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet smkWebView *webView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previousButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *reloadButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *showToolbarButton;
 
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbarFirst;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbarSecond;
-
-
-
-
-- (IBAction)toggleToolbarAction:(id)sender;
-
+- (IBAction)previousButtonAction:(id)sender;
+- (IBAction)nextButtonAction:(id)sender;
+- (IBAction)reloadButtonAction:(id)sender;
 
 @end

@@ -9,129 +9,51 @@
 #import "smkWebViewController.h"
 #import "smkAppDelegate.h"
 
+@interface smkWebViewController()
+
+- (NSString *)encodeString:(NSString *)string;
+- (void)layoutToolbar:(UIInterfaceOrientation)orientation;
+- (void)updateNavigationButtons;
+
+@end
+
 @implementation smkWebViewController
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
-    // assign delegate
-    self.urlTextField.delegate = self;
-    self.webView.delegate = self;
-    
     // assign url filter
     self.webView.urlFilter = [(smkAppDelegate *)[UIApplication sharedApplication].delegate urlFilter];
     
-    
-    
-    
-    
-    [self.view bringSubviewToFront:self.toolbarFirst];
-    
-    
-    // hide by default
-    //[self hideToolbar];
-    
-    
-    
-    
+    // update buttons
+    [self updateNavigationButtons];
 }
 
-- (void)hideToolbar {
-    
-    
-    CGRect oldFrame = self.webView.frame;
-    oldFrame.origin.y = self.toolbarSecond.frame.origin.y;
-    
-    CGRect aa = self.toolbarSecond.frame;
-    aa.origin.y = 0;
-    
-    // animation
-    [UIView animateWithDuration:0.3f animations:^{
-        
-        self.toolbarSecond.frame = aa;
-        
-        self.webView.frame = oldFrame;
-        
-    } completion:^(BOOL finished) {
-        self.toolbarSecond.alpha = 0;
-    }];
-}
-
-- (void)showToolbar {
-    
-    
-    CGRect oldFrame = self.webView.frame;
-    oldFrame.origin.y = 2 * self.toolbarSecond.frame.size.height;
-    
-    CGRect aa = self.toolbarSecond.frame;
-    aa.origin.y = self.toolbarSecond.frame.size.height;
-    
-    [UIView animateWithDuration:0.3f animations:^{
-        self.toolbarSecond.alpha = 1;
-        
-        
-        self.toolbarSecond.frame = aa;
-        self.webView.frame = oldFrame;
-    }];
-    
-    //self.showToolbarButton.image =
-    
-    
-    
-    CGRect aaaa = self.tabBarController.tabBar.frame;
-    //aaaa.origin.y = ;
-    
-    self.tabBarController.tabBar.frame = aaaa;
-    
+- (void)dealloc {
+    self.webView.urlFilter = nil;
 }
 
 #pragma mark - Rotation
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    
-    
-    
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    // handle layout
+    [self layoutToolbar:[UIApplication sharedApplication].statusBarOrientation];
 }
 
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+    // handle layout
+    [self layoutToolbar:[UIApplication sharedApplication].statusBarOrientation];
     
-    NSLog(@"# %d", textField.isFirstResponder);
-    
-    // in portrait
-    if (UIDeviceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
-        
-        //resize toolbar
-        CGRect screenSize = [UIScreen mainScreen].bounds;
-        CGRect newFrame = self.toolbarFirst.frame;
-        newFrame.size.width = screenSize.size.height;
-        
-        // animation
-        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionLayoutSubviews animations:^{
-            self.toolbarFirst.frame = newFrame;
-        } completion:nil];
-    }
+    self.webView.userInteractionEnabled = NO;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    
-    NSLog(@"# %d", textField.isFirstResponder);
-    
-    
-    // in portrait
-    if (UIDeviceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
-        
-        //resize toolbar
-        CGRect screenSize = [UIScreen mainScreen].bounds;
-        CGRect newFrame = self.toolbarFirst.frame;
-        newFrame.size.width = screenSize.size.width;
-        
-        // animation
-        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionLayoutSubviews animations:^{
-            self.toolbarFirst.frame = newFrame;
-        } completion:nil];
-    }
+    // handle layout
+    [self layoutToolbar:[UIApplication sharedApplication].statusBarOrientation];
+
+    self.webView.userInteractionEnabled = YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -160,7 +82,7 @@
     self.urlTextField.text = webView.request.URL.absoluteString;
     
     // update buttons
-    
+    [self updateNavigationButtons];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -173,16 +95,20 @@
 
 #pragma mark - Actions
 
-- (IBAction)toggleToolbarAction:(id)sender {
-    if (self.toolbarSecond.alpha == 0.0f) {
-        [self showToolbar];
-    } else {
-        [self hideToolbar];
+- (IBAction)reloadButtonAction:(id)sender {
+    [self.webView reload];
+}
+
+- (IBAction)previousButtonAction:(id)sender {
+    if (self.webView.canGoBack) {
+        [self.webView goBack];
     }
 }
 
-- (IBAction)reloadButtonAction:(id)sender {
-    
+- (IBAction)nextButtonAction:(id)sender {
+    if (self.webView.canGoForward) {
+        [self.webView goForward];
+    }
 }
 
 #pragma mark - Private methods
@@ -191,13 +117,46 @@
 	return (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)string, CFSTR("%"), CFSTR(":/=,!$&'()*+;[]@#?"), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
 }
 
-- (void)layoutToolbar {
+- (void)layoutToolbar:(UIInterfaceOrientation)orientation {
     
-    if (self.urlTextField.isFirstResponder) {
+    // current frame
+    CGRect screenSize = [UIScreen mainScreen].bounds;
+    __block CGRect newFrame = self.toolbar.frame;
+    
+    // portrait
+    if (UIDeviceOrientationIsPortrait(orientation)) {
+        
+        // resize
+        if (self.urlTextField.isFirstResponder) {
+            
+            // animation
+            [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionLayoutSubviews animations:^{
+                newFrame.size.width = screenSize.size.height;
+                self.toolbar.frame = newFrame;
+            } completion:nil];
+        } else {
+            // normal size
+            [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionLayoutSubviews animations:^{
+                newFrame.size.width = screenSize.size.width;
+                self.toolbar.frame = newFrame;
+            } completion:nil];
+        }
         
     } else {
-        
+        // landscape
+        if (self.urlTextField.isFirstResponder) {
+            // animation
+            [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionLayoutSubviews animations:^{
+                newFrame.size.width = screenSize.size.height;
+                self.toolbar.frame = newFrame;
+            } completion:nil];
+        }
     }
+}
+
+- (void)updateNavigationButtons {
+    self.previousButton.enabled = self.webView.canGoBack;
+    self.nextButton.enabled = self.webView.canGoForward;
 }
 
 @end
