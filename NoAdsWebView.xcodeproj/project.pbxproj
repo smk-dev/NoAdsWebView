@@ -14,11 +14,11 @@
 		9E58B086170962FA00F347FA /* smkSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E58B085170962FA00F347FA /* smkSettingsViewController.m */; };
 		9E58B08A1709A08900F347FA /* smkSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E58B0891709A08900F347FA /* smkSettingsCell.m */; };
 		9E58B08D1709D9E900F347FA /* smkIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E58B08C1709D9E900F347FA /* smkIntroViewController.m */; };
-		9E58B0901709E43300F347FA /* smkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E58B08F1709E43300F347FA /* smkButton.m */; };
 		9E58B099170A0D1200F347FA /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E58B095170A0D1200F347FA /* arrow_left.png */; };
 		9E58B09A170A0D1200F347FA /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E58B096170A0D1200F347FA /* arrow_left@2x.png */; };
 		9E58B09B170A0D1200F347FA /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E58B097170A0D1200F347FA /* arrow_right.png */; };
 		9E58B09C170A0D1200F347FA /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E58B098170A0D1200F347FA /* arrow_right@2x.png */; };
+		9E5C2180170DFD4C00E3A247 /* smkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C217F170DFD4C00E3A247 /* smkButton.m */; };
 		9E6E08B616FF3F56006F0E25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E08B516FF3F56006F0E25 /* UIKit.framework */; };
 		9E6E08B816FF3F56006F0E25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E08B716FF3F56006F0E25 /* Foundation.framework */; };
 		9E6E08BA16FF3F56006F0E25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E08B916FF3F56006F0E25 /* CoreGraphics.framework */; };
@@ -55,12 +55,12 @@
 		9E58B0891709A08900F347FA /* smkSettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = smkSettingsCell.m; path = Classes/smkSettingsCell.m; sourceTree = "<group>"; };
 		9E58B08B1709D9E900F347FA /* smkIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = smkIntroViewController.h; path = Classes/smkIntroViewController.h; sourceTree = "<group>"; };
 		9E58B08C1709D9E900F347FA /* smkIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = smkIntroViewController.m; path = Classes/smkIntroViewController.m; sourceTree = "<group>"; };
-		9E58B08E1709E43300F347FA /* smkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smkButton.h; sourceTree = "<group>"; };
-		9E58B08F1709E43300F347FA /* smkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smkButton.m; sourceTree = "<group>"; };
 		9E58B095170A0D1200F347FA /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_left.png; path = Resources/arrow_left.png; sourceTree = "<group>"; };
 		9E58B096170A0D1200F347FA /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_left@2x.png"; path = "Resources/arrow_left@2x.png"; sourceTree = "<group>"; };
 		9E58B097170A0D1200F347FA /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_right.png; path = Resources/arrow_right.png; sourceTree = "<group>"; };
 		9E58B098170A0D1200F347FA /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_right@2x.png"; path = "Resources/arrow_right@2x.png"; sourceTree = "<group>"; };
+		9E5C217E170DFD4C00E3A247 /* smkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = smkButton.h; path = Classes/smkButton.h; sourceTree = "<group>"; };
+		9E5C217F170DFD4C00E3A247 /* smkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = smkButton.m; path = Classes/smkButton.m; sourceTree = "<group>"; };
 		9E6E08B216FF3F56006F0E25 /* NoAdsWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoAdsWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6E08B516FF3F56006F0E25 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E6E08B716FF3F56006F0E25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,12 +128,12 @@
 		9E58B0871709A06400F347FA /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				9E5C217E170DFD4C00E3A247 /* smkButton.h */,
+				9E5C217F170DFD4C00E3A247 /* smkButton.m */,
 				9E58B0791709611800F347FA /* smkWebView.h */,
 				9E58B07A1709611800F347FA /* smkWebView.m */,
 				9E58B0881709A08900F347FA /* smkSettingsCell.h */,
 				9E58B0891709A08900F347FA /* smkSettingsCell.m */,
-				9E58B08E1709E43300F347FA /* smkButton.h */,
-				9E58B08F1709E43300F347FA /* smkButton.m */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -342,7 +342,7 @@
 				9E58B086170962FA00F347FA /* smkSettingsViewController.m in Sources */,
 				9E58B08A1709A08900F347FA /* smkSettingsCell.m in Sources */,
 				9E58B08D1709D9E900F347FA /* smkIntroViewController.m in Sources */,
-				9E58B0901709E43300F347FA /* smkButton.m in Sources */,
+				9E5C2180170DFD4C00E3A247 /* smkButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
