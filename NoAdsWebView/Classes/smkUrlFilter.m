@@ -162,10 +162,50 @@
     return [url.host.lowercaseString hasSuffix:@"googleads.g.doubleclick.net"] && [url.relativePath.lowercaseString hasPrefix:@"/pagead/"];
 }
 
+#pragma mark - Other
+
+- (BOOL)isImageURL:(NSURL *)url {
+    return  [url.relativePath.lowercaseString hasSuffix:@".jpg"]
+         || [url.relativePath.lowercaseString hasSuffix:@".jpeg"]
+         || [url.relativePath.lowercaseString hasSuffix:@".png"]
+         || [url.relativePath.lowercaseString hasSuffix:@".gif"];
+}
+
+- (BOOL)isJavaScript:(NSURL *)url {
+    return  [url.relativePath.lowercaseString hasSuffix:@".js"];
+}
+
 #pragma mark - Private methods
 
 - (NSString *)simpleUrlString:(NSURL *)url {
     return [NSString stringWithFormat:@"%@://%@%@", url.scheme, url.host, url.relativePath];
+}
+
+- (NSCachedURLResponse *)emptyResponse:(NSURL *)url {
+    NSURLResponse *response = [[NSURLResponse alloc] initWithURL:url MIMEType:@"text/plain" expectedContentLength:0 textEncodingName:@"UTF8"];
+    return [[NSCachedURLResponse alloc] initWithResponse:response data:nil];
+}
+
+#pragma mark - NSCache
+
+- (NSCachedURLResponse *)cachedResponseForRequest:(NSURLRequest*)request {
+    
+    LogTrace(@"Checking cache: %@", [self simpleUrlString:request.URL]);
+    
+    // block images
+    if (self.blockImages && [self isImageURL:request.URL]) {
+        LogTrace(@"Reject: %@", [self simpleUrlString:request.URL]);
+        return [self emptyResponse:request.URL];
+    }
+    
+    // block javascript
+    if (self.blockJavaScript && [self isJavaScript:request.URL]) {
+        LogTrace(@"Reject: %@", [self simpleUrlString:request.URL]);
+        return [self emptyResponse:request.URL];
+    }
+    
+    // default response
+    return [super cachedResponseForRequest:request];
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface smkUrlFilter : NSObject
+@interface smkUrlFilter : NSURLCache
 
 // Facebook
 @property (nonatomic, assign) BOOL blockFacebookLike;
