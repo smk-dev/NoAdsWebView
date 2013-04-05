@@ -24,5 +24,5 @@ Source:
 http://blog.twg.ca/2010/11/retina-display-icon-set/
 
 ![Alt text](/github/intro.png "Intro screen")
-![Alt text](/github/intro.png "Browser screen")
-![Alt text](/github/intro.png "Settings screen")
+![Alt text](/github/browser.png "Browser screen")
+![Alt text](/github/settings.png "Settings screen")
